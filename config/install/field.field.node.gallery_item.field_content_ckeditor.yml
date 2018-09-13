@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content_ckeditor
+    - node.type.gallery_item
+  module:
+    - text
+id: node.gallery_item.field_content_ckeditor
+field_name: field_content_ckeditor
+entity_type: node
+bundle: gallery_item
+label: CkEditor
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

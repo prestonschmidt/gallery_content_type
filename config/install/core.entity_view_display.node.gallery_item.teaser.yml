@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.gallery_item.field_comments_content
+    - field.field.node.gallery_item.field_content_ckeditor
+    - field.field.node.gallery_item.field_content_image_multiple
+    - image.style.teaser_image
+    - node.type.gallery_item
+  module:
+    - image
+    - user
+id: node.gallery_item.teaser
+targetEntityType: node
+bundle: gallery_item
+mode: teaser
+content:
+  field_content_image_multiple:
+    type: image_url
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      image_style: teaser_image
+    third_party_settings: {  }
+hidden:
+  field_comments_content: true
+  field_content_ckeditor: true
+  links: true
+  share_everywhere: true

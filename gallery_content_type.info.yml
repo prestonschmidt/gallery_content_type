@@ -1,0 +1,7 @@
+name: Gallery Content Type and View
+description: 'Used for gallery type content. '
+type: module
+core: 8.x
+package: Prototype
+dependencies:
+  - prototype_content
