@@ -1,0 +1,48 @@
+<section class="node-wrapper {{ node.type.0.target_id | clean_class }}-wrapper" {{ attributes }}>
+    
+    {% if showUser != 'no' or showDetails != 'no' %}
+        <div class="node-publish-details">
+
+            {% if showUser != 'no' %}
+                {% if author_picture %}
+                    {{ author_picture }}
+                {% endif %}
+            {% endif %}
+
+            {% if  showDetails != 'no' %}
+                <span class="node-details">
+                    
+                    {{ node.createdtime | date('F j, Y') }} at {{ node.createdtime | date('h:i a') }}
+                    
+                    {% if node_stats %}
+                        {{ node_stats }}
+                    {% endif %}
+                    
+                </span>
+                
+            {% endif %}
+
+        </div>
+    {% endif %}
+    
+    <div id="gallery-option-bar">
+        
+        <ul id="gallery-size-options">
+            <li sizeoption="small"><div></div><div></div><div></div></li>
+            <li sizeoption="medium"><div></div><div></div></li>
+            <li sizeoption="large"><div></div></li>
+        </ul>
+        
+    </div>
+            
+    <div class="gallery-content-grid" sizeoption="small">
+        {{ content.field_content_image_multiple }}
+    </div>
+        
+    {{ content.field_content_ckeditor }}
+    
+    {{ content.field_comments_content }}
+
+</section>
+
+<div class="modal-gallery"><div class="thumbstrip"></div></div>

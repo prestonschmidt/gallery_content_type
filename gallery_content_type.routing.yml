@@ -1,0 +1,17 @@
+gallery_content_type.settings:
+  path: '/admin/config/prototype-suite/gallery-content-type'
+  defaults:
+    _form: '\Drupal\gallery_content_type\Form\GalleryContentTypeConfigurationForm'
+    _title: '<em>Gallery Content Type</em> Module Configuration'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: TRUE
+    
+system.admin_config_prototype_suite:
+  path: '/admin/config/prototype-suite'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Prototype Suite'
+  requirements:
+    _permission: 'access administration pages'

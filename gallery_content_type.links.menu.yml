@@ -1,0 +1,13 @@
+gallery_content_type.settings:
+  title: 'Gallery Content Type'
+  parent: prototype_suite.group.admin
+  description: 'Configuration settings for the "Gallery Content Type" module. '
+  route_name: gallery_content_type.settings
+  weight: -100
+  
+prototype_suite.group.admin:
+  title: 'Prototype Suite'
+  route_name: system.admin_config_prototype_suite
+  parent: system.admin_config
+  description: 'Prototype Suite Configuration'
+  weight: -999

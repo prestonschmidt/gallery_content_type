@@ -1,0 +1,32 @@
+<div class="teaser-wrapper {{ node.type.0.target_id | clean_class }}-teaser-wrapper" {{ attributes }}>
+    
+    <div class="teaser-header">
+        {% if content.field_content_image_multiple %}
+            <img src="{% spaceless %}{{ content.field_content_image_multiple.0 |escape|striptags('<!-- -->') }}{% endspaceless %}" />
+            <a class="teaser-image-link" href="{{ path('entity.node.canonical', {'node': node.id}) }}"></a>
+        {% endif %}
+    </div>
+    
+    <div class="teaser-content">
+        
+        <a class="teaser-title-link" href="{{ path('entity.node.canonical', {'node': node.id}) }}">
+            <h2 class="teaser-title">{{ label }}</h2>
+        </a>
+        
+        <div class="teaser-details">
+
+            <span class="created-time">{{ node.createdtime | date('F j, Y') }} at {{ node.createdtime | date('h:i a') }}</span>
+
+            {% if node_stats %}
+                <span class="node-stats">{{ node_stats }}</span>
+            {% endif %}
+            
+            {% if content.field_comments_content['#items'].0.comment_count %}
+                <span class="comment-count">{{ content.field_comments_content['#items'].0.comment_count }} comments</span>
+            {% endif %}
+
+        </div> 
+        
+    </div>
+        
+</div>
