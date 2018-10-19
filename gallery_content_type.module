@@ -33,8 +33,11 @@ function gallery_content_type_preprocess_node(&$variables) {
     $variables['module_path'] = \Drupal::moduleHandler()->getModule('gallery_content_type')->getPath();
     
     $config = \Drupal::config('gallery_content_type.gallery_content_type_settings');
-    $variables['showUser'] = $config->get('show_user');
-    $variables['showDetails'] = $config->get('show_details');
+    $variables['showNodeAuthor'] = $config->get('show_node_author');
+    $variables['showNodeDetails'] = $config->get('show_node_details');
+    $variables['showGalleryOptionBar'] = $config->get('show_gallery_option_bar');
+    $variables['showNodeTeaserAuthor'] = $config->get('show_node_teaser_author');
+    $variables['showNodeTeaserPublish'] = $config->get('show_node_teaser_publish');
     
 }
 

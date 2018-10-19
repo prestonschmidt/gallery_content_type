@@ -1,5 +1,5 @@
 gallery_content_type.settings:
-  title: 'Gallery Content Type'
+  title: 'Gallery Content Type Settings'
   parent: prototype_suite.group.admin
   description: 'Configuration settings for the "Gallery Content Type" module. '
   route_name: gallery_content_type.settings

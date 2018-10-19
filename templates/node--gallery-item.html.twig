@@ -1,21 +1,21 @@
 <section class="node-wrapper {{ node.type.0.target_id | clean_class }}-wrapper" {{ attributes }}>
     
-    {% if showUser != 'no' or showDetails != 'no' %}
+    {% if showNodeAuthor != 'no' or showNodeDetails != 'no' %}
         <div class="node-publish-details">
 
-            {% if showUser != 'no' %}
+            {% if showNodeAuthor != 'no' %}
                 {% if author_picture %}
                     {{ author_picture }}
                 {% endif %}
             {% endif %}
 
-            {% if  showDetails != 'no' %}
+            {% if  showNodeDetails != 'no' %}
                 <span class="node-details">
                     
                     {{ node.createdtime | date('F j, Y') }} at {{ node.createdtime | date('h:i a') }}
                     
                     {% if node_stats %}
-                        {{ node_stats }}
+                        - {{ node_stats }}
                     {% endif %}
                     
                 </span>
@@ -25,15 +25,17 @@
         </div>
     {% endif %}
     
-    <div id="gallery-option-bar">
-        
-        <ul id="gallery-size-options">
-            <li sizeoption="small"><div></div><div></div><div></div></li>
-            <li sizeoption="medium"><div></div><div></div></li>
-            <li sizeoption="large"><div></div></li>
-        </ul>
-        
-    </div>
+    {% if showGalleryOptionBar != 'no' %}
+        <div id="gallery-option-bar">
+
+            <ul id="gallery-size-options">
+                <li sizeoption="small"><div></div><div></div><div></div></li>
+                <li sizeoption="medium"><div></div><div></div></li>
+                <li sizeoption="large"><div></div></li>
+            </ul>
+
+        </div>
+    {% endif %}
             
     <div class="gallery-content-grid" sizeoption="small">
         {{ content.field_content_image_multiple }}

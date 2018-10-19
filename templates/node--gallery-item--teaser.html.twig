@@ -8,17 +8,23 @@
     </div>
     
     <div class="teaser-content">
-        
+                
         <a class="teaser-title-link" href="{{ path('entity.node.canonical', {'node': node.id}) }}">
             <h2 class="teaser-title">{{ label }}</h2>
         </a>
         
         <div class="teaser-details">
+            
+            {% if showNodeTeaserAuthor != 'no' %}
+                <span class="author-name">Authored by: {{ author_picture['#user'].name.0.value }}</span>
+            {% endif %}
 
-            <span class="created-time">{{ node.createdtime | date('F j, Y') }} at {{ node.createdtime | date('h:i a') }}</span>
+            {% if showNodeTeaserPublish != 'no' %}
+                <span class="created-time">{{ node.createdtime | date('F j, Y') }} at {{ node.createdtime | date('h:i a') }}</span>
 
-            {% if node_stats %}
-                <span class="node-stats">{{ node_stats }}</span>
+                {% if node_stats %}
+                    <span class="node-stats">{{ node_stats }}</span>
+                {% endif %}
             {% endif %}
             
             {% if content.field_comments_content['#items'].0.comment_count %}
