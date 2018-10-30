@@ -28,9 +28,6 @@ function gallery_content_type_preprocess_node(&$variables) {
     // Get statistics count for current node. Statistics module must be enabled.
     $statistics = statistics_get($variables['node']->id());
     $variables['node_stats'] = \Drupal::translation()->formatPlural($statistics['totalcount'], '1 view', '@count views');
-   
-    $variables['#attached']['library'][] = 'gallery_content_type/styles';
-    $variables['module_path'] = \Drupal::moduleHandler()->getModule('gallery_content_type')->getPath();
     
     $config = \Drupal::config('gallery_content_type.gallery_content_type_settings');
     $variables['showNodeAuthor'] = $config->get('show_node_author');
